@@ -1,0 +1,33 @@
+name: Build develop & master
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GPA_TOKEN: ${{ secrets.GPA_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm ci
+      - run: npm run test
+      - run: npm run lint
+      - run: npm run build
+  save-build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.event.pull_request.merged == true
+    env:
+      GPA_TOKEN: ${{ secrets.GPA_TOKEN }}
+    needs: build
+    steps:
+      - uses: actions/upload-artifact@v1
+        with:
+          # name: component-lib
+          # path: lib

@@ -1,0 +1,5 @@
+// Imports in this file will be imported in every scss file.
+// This is meant to expose commonly used variables without having to manually import them everytime
+
+@import '~@lawebteam/lanl-components/lib/assets/scss/_custom-colors.scss';
+@import '~@lawebteam/lanl-components/lib/assets/scss/_custom-mixins.scss';

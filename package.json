@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/lanl-web/gatsby-starter-lanl/#readme",
   "dependencies": {
-    "@lanl-web/lanl-components": "^1.0.5",
+    "@lanl-web/lanl-components": "^1.4.0",
     "gatsby": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",

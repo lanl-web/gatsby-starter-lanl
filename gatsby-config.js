@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Gatsby Lanl Starter',
     description: 'Basic gatsby setup for lanl',
-    author: '@lawebteam',
+    author: '@lanl-web',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

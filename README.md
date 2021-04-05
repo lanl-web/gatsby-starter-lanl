@@ -20,7 +20,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     ```shell
     # create a new Gatsby site using the default starter
-    gatsby new lanl-project https://github.com/lawebteam/gatsby-starter-lanl.git
+    gatsby new lanl-project https://github.com/lanl-web/gatsby-starter-lanl.git
     ```
 
 1.  **Start developing.**

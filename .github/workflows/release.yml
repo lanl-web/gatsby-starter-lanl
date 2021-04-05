@@ -17,7 +17,7 @@ name: Release master
 #         with:
 #           node-version: 14
 #           registry-url: https://npm.pkg.github.com/
-#           scope: '@lawebteam'
+#           scope: '@lanl-web'
 #       - run: npm ci
 #       - run: npm run test
 #       - run: npm run lint

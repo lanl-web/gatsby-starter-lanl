@@ -10,7 +10,7 @@ import {
   MDBDropdownMenu,
   MDBDropdownItem,
   Alert,
-} from '@lawebteam/lanl-components';
+} from '@lanl-web/lanl-components';
 
 const IndexPage = () => (
   <Layout>

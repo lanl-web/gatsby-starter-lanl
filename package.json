@@ -1,5 +1,5 @@
 {
-  "name": "@lawebteam/gatsby-starter-lanl",
+  "name": "@lanl-web/gatsby-starter-lanl",
   "version": "1.0.0",
   "description": "Gatsby starter for lanl sites",
   "scripts": {
@@ -15,16 +15,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lawebteam/gatsby-starter-lanl.git"
+    "url": "https://github.com/lanl-web/gatsby-starter-lanl.git"
   },
   "author": "LANL Web Team",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/lawebteam/gatsby-starter-lanl//issues"
+    "url": "https://github.com/lanl-web/gatsby-starter-lanl//issues"
   },
-  "homepage": "https://github.com/lawebteam/gatsby-starter-lanl/#readme",
+  "homepage": "https://github.com/lanl-web/gatsby-starter-lanl/#readme",
   "dependencies": {
-    "@lawebteam/lanl-components": "^1.0.5",
+    "@lanl-web/lanl-components": "^1.0.5",
     "gatsby": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",

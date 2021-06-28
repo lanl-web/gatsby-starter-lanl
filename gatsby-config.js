@@ -1,14 +1,24 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const { createLink } = require('./apollo');
+
 module.exports = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true,
+    DEV_SSR: false,
+  },
   siteMetadata: {
-    title: 'Gatsby Lanl Starter',
-    description: 'Basic gatsby setup for lanl',
+    title: 'Discover LANL',
+    description: 'Explore everything LANL is doing',
     author: '@lanl-web',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-image',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -27,6 +37,25 @@ module.exports = {
       options: {
         rule: {
           include: /\.inline\.svg$/,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'System',
+        fieldName: 'system',
+        url: `${process.env.CMS_URL}/graphql/system/`,
+        createLink,
+        batch: true,
+        dataLoaderOptions: {
+          maxBatchSize: 10,
         },
       },
     },

@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -37,6 +38,12 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {

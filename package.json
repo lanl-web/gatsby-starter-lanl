@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Gatsby starter for lanl sites",
   "scripts": {
-    "dev": "gatsby develop",
-    "build": "npm run test && npm run clean && gatsby build",
+    "dev": "NODE_ENV=development GATSBY_ENV=development GATSBY_EXPERIMENTAL_QUERY_CONCURRENCY=4 ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
+    "build": "NODE_ENV=test npm run test && GATSBY_ENV=production NODE_ENV=production gatsby build",
     "clean": "gatsby clean",
     "test": "jest",
     "test:watch": "jest --watch",

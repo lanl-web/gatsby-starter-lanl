@@ -15,6 +15,7 @@ module.exports = {
     title: 'Discover LANL',
     description: 'Explore everything LANL is doing',
     author: '@lanl-web',
+    siteUrl: 'https://lanl.gov',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

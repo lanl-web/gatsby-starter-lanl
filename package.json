@@ -26,7 +26,7 @@
   "dependencies": {
     "@directus/gatsby-source-directus": "^9.0.0-rc.69",
     "@directus/sdk-js": "^9.0.0-rc.53",
-    "@lanl-web/lanl-components": "^2.0.2",
+    "@lanl-web/lanl-components": "^2.7.1",
     "@lnfusion/gatsby-source-graphql": "0.0.4",
     "@robinmetral/gatsby-source-s3": "^2.1.1",
     "chalk": "^4.1.1",

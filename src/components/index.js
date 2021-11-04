@@ -1,1 +1,0 @@
-export { BodyImage } from './BodyImage';

@@ -1,0 +1,24 @@
+.standard-template-image {
+  .caption {
+    display: block;
+    width: 100%;
+    color: $color-caption;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @include desktop {
+    padding: 0 20px;
+
+    .caption {
+      padding: 10px 0 0;
+    }
+  }
+}

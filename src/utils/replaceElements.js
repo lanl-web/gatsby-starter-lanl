@@ -13,16 +13,16 @@ export const getSrcID = (src) => src.split('/').pop();
 export const isAsset = (src) => src.split('/').slice(-2)[0] === 'assets';
 
 export const useFiles = (id) => {
-  // const {
-  //   system: { files },
-  // } = useStaticQuery(graphql`
-  //   query {
-  //     system {
-  //       ...AllImageFiles
-  //     }
-  //   }
-  // `);
-  // return files.find((fid) => fid.id === id);
+  const {
+    system: { files },
+  } = useStaticQuery(graphql`
+    query {
+      system {
+        ...AllImageFiles
+      }
+    }
+  `);
+  return files.find((fid) => fid.id === id);
 };
 
 export const createBodyImage = (id, files = {}) => {

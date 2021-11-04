@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import { Banner, BreadCrumbs, SocialBlock } from '@lanl-web/lanl-components';
 
@@ -77,5 +78,28 @@ ArticleTemplate.propTypes = {
   data: PropTypes.object,
   location: PropTypes.object,
 };
+
+export const AllImageFilesFragment = graphql`
+  fragment AllImageFiles on System {
+    files(
+      filter: {
+        _or: [
+          { type: { _contains: "jpg" } }
+          { type: { _contains: "jpeg" } }
+          { type: { _contains: "png" } }
+          { type: { _contains: "gif" } }
+        ]
+      }
+      limit: -1
+    ) {
+      id
+      filename_disk
+      type
+      width
+      height
+      title
+    }
+  }
+`;
 
 export default ArticleTemplate;

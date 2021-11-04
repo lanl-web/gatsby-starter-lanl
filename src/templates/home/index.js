@@ -9,7 +9,7 @@ import './index.scss';
 const HomeTemplate = ({ location, data }) => {
   return (
     <Layout className='home-template' location={location}>
-      <SEO title={'Home Template'} />
+      <SEO title='Home Template' />
       <p>Home template</p>
     </Layout>
   );

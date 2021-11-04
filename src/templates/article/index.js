@@ -9,7 +9,7 @@ import './index.scss';
 const ArticleTemplate = ({ location, data }) => {
   return (
     <Layout className='article-template' location={location}>
-      <SEO title={'Article Template'} />
+      <SEO title='Article Template' />
       <p>Article template</p>
     </Layout>
   );

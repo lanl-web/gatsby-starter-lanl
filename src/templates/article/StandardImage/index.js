@@ -1,0 +1,1 @@
+export { StandardImage } from './StandardImage';

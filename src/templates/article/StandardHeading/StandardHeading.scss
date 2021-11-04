@@ -1,0 +1,23 @@
+.standard-template-heading {
+  margin-bottom: 30px;
+
+  .introduction {
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .title {
+    font-weight: 900;
+    margin-top: 20px;
+  }
+
+  @include desktop {
+
+    &-title {
+      margin-top: 50px;
+    }
+  }
+}

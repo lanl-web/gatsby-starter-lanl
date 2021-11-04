@@ -3,6 +3,7 @@ import { createDownloadLink, getImageUrl } from './image';
 import { formatPodcastData } from './formatPodcastData';
 import { publishedFilter, publishedIssueFilter } from './filter';
 import { isIterableElseEmpty } from './typecheck';
+import { replaceElements } from './replaceElements';
 import { useMobileBool } from './useMobileBool';
 import { useScreenSize } from './useScreenSize';
 
@@ -14,6 +15,7 @@ export {
   isIterableElseEmpty,
   publishedFilter,
   publishedIssueFilter,
+  replaceElements,
   useMobileBool,
   useScreenSize,
 };

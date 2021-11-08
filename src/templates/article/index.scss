@@ -10,7 +10,8 @@
       min-height: 300px;
 
       .lanl-banner-title {
-        a:hover { //This needs to be added to lanl-components and removed from here
+        a:hover {
+          //This needs to be added to lanl-components and removed from here
           text-decoration: none;
           cursor: default;
         }
@@ -96,8 +97,12 @@
     }
 
     .social-section {
-      padding-bottom: 20px;
+      padding-bottom: 61px;
       border-top: thin solid $color-line;
+
+      .social-block {
+        margin-bottom: 0;
+      }
     }
   }
 

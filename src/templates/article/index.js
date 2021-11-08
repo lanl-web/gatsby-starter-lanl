@@ -7,6 +7,7 @@ import { Banner, BreadCrumbs, SocialBlock } from '@lanl-web/lanl-components';
 import { StandardContent } from './StandardContent';
 import { StandardHeading } from './StandardHeading';
 import { StandardImage } from './StandardImage';
+import { StandardContactBlock } from './StandardContactBlock';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
@@ -28,6 +29,19 @@ const ArticleTemplate = ({ location, data }) => {
     },
   };
 
+  const contacts = [
+    {
+      name: 'Environmental Communication & Public Involvement',
+      mailStop: '',
+      email: 'example@lanl.gov',
+    },
+    {
+      name: 'Lorem Ipsum',
+      mailStop: '',
+      email: 'lorem@lanl.gov',
+    },
+  ];
+
   return (
     <Layout className='article-template' location={location}>
       <SEO title={name} />
@@ -46,7 +60,6 @@ const ArticleTemplate = ({ location, data }) => {
           />
           <StandardHeading introduction={introduction} title={title} />
         </div>
-
         <div className='main'>
           <div className='main-article'>
             <StandardImage story={page} />
@@ -57,11 +70,13 @@ const ArticleTemplate = ({ location, data }) => {
             <div className='social-section'>
               <h5 className='links-header'>Share</h5>
               <SocialBlock
+                className='social-block'
                 emailSubject={title}
                 shareLink={shareLink}
                 collapse={true}
               />
             </div>
+            <StandardContactBlock dividerTop contacts={contacts} />
           </div>
         </div>
       </div>

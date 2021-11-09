@@ -1,1 +1,0 @@
-export { StandardContent } from './StandardContent';

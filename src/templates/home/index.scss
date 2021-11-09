@@ -1,3 +1,64 @@
 .home-template {
+  .home-banner {
+    width: 100%;
+  }
 
+  .contact-block {
+    border-top: thin solid $color-line;
+
+    .title {
+      margin-top: 35px;
+      font: normal normal 600 20px/30px Source Sans Pro;
+      letter-spacing: 1.5px;
+      color: $color-caption;
+      text-transform: uppercase;
+    }
+
+    .info {
+      margin: 30px 0 110px;
+      font: normal normal 600 20px/24px Source Sans Pro;
+    }
+  }
+
+  .link-banner {
+    .lanl-banner-title {
+      font-size: 48px;
+      line-height: 64px;
+    }
+  }
+
+
+  .intro-section {
+    .lanl-section-container {
+      max-width: 1400px;
+    }
+  }
+
+  .page-title {
+    margin-bottom: 30px;
+  }
+
+  .page-intro {
+
+    p {
+      font-weight: 600;
+    }
+  }
+
+  .lanl-banner-content {
+    &-right,&-left {
+      max-width: 705px
+    }
+  }
+
+  .quick-links {
+    .lanl-panel {
+
+      @include desktop {
+        align-self: stretch;
+        flex: 0 1 200px;
+      }
+    }
+  }
 }
+

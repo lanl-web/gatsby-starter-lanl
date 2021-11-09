@@ -2,16 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import { Banner, BreadCrumbs, SocialBlock } from '@lanl-web/lanl-components';
+import {
+  Banner,
+  BreadCrumbs,
+  ContentBody,
+  ContentIntroduction,
+  ContentTitle,
+  SocialBlock,
+} from '@lanl-web/lanl-components';
 
-import { StandardContent } from './StandardContent';
-import { StandardHeading } from './StandardHeading';
-import { StandardImage } from './StandardImage';
+import { ArticleImage } from './ArticleImage';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 
 import './index.scss';
+import { replaceElements } from '../../utils';
 
 const ArticleTemplate = ({ location, data }) => {
   const name = 'name';
@@ -44,13 +50,19 @@ const ArticleTemplate = ({ location, data }) => {
             location={location}
             homeName='Sustainability'
           />
-          <StandardHeading introduction={introduction} title={title} />
+          <ContentTitle>{title}</ContentTitle>
+          <ContentIntroduction>{introduction}</ContentIntroduction>
         </div>
 
         <div className='main'>
           <div className='main-article'>
-            <StandardImage story={page} />
-            <StandardContent story={page} />
+            <ArticleImage story={page} />
+            <div className='body'>
+              <ContentBody
+                body={replaceElements(page?.body)}
+                className='body-copy'
+              />
+            </div>
           </div>
 
           <div className='main-links'>

@@ -8,19 +8,31 @@
 
     .lanl-banner {
       min-height: 300px;
+    }
+  }
 
-      .lanl-banner-title {
-        a:hover { //This needs to be added to lanl-components and removed from here
-          text-decoration: none;
-          cursor: default;
-        }
-      }
+  .body {
+    padding: 30px 20px 20px;
+    max-width: 100vw;
+    overflow: hidden;
+
+    &-copy {
+      max-width: 900px;
+      margin-left: auto;
     }
   }
 
   .header-content {
     margin-top: 40px;
     padding: 0 20px;
+  }
+
+  .content-title {
+    margin: 20px 0 0;
+  }
+
+  .content-introduction {
+    margin-bottom: 30px;
   }
 
   .wrapper {
@@ -88,6 +100,10 @@
         padding: 0 20px;
         margin-left: 20px;
       }
+    }
+
+    .content-title {
+      margin-top: 50px;
     }
 
     .more,

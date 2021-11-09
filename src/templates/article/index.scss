@@ -10,7 +10,8 @@
       min-height: 300px;
 
       .lanl-banner-title {
-        a:hover { //This needs to be added to lanl-components and removed from here
+        a:hover {
+          //This needs to be added to lanl-components and removed from here
           text-decoration: none;
           cursor: default;
         }
@@ -54,6 +55,12 @@
       flex: 1 1 1000px;
       max-width: 1000px;
       order: 2;
+
+      .body {
+        padding: 30px 20px 20px;
+        max-width: 900px;
+        margin-left: auto;
+      }
     }
 
     &-links {

@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import { Banner, BreadCrumbs, SocialBlock } from '@lanl-web/lanl-components';
+import {
+  Banner,
+  BreadCrumbs,
+  ContactsBlock,
+  SocialBlock,
+} from '@lanl-web/lanl-components';
 
 import { StandardContent } from './StandardContent';
 import { StandardHeading } from './StandardHeading';
 import { StandardImage } from './StandardImage';
-import { StandardContactBlock } from './StandardContactBlock';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
@@ -31,16 +35,24 @@ const ArticleTemplate = ({ location, data }) => {
 
   const contacts = [
     {
-      name: 'Environmental Communication & Public Involvement',
-      mailStop: '',
-      email: 'example@lanl.gov',
+      name: 'Lorem Ipsum',
+      mail_stop: 'Mail Stop 1',
+      email: 'lorem@lanl.gov',
     },
     {
       name: 'Lorem Ipsum',
-      mailStop: '',
+      mail_stop: 'Mail Stop 2',
       email: 'lorem@lanl.gov',
     },
   ];
+
+  const contactSection = (
+    <div className='contacts-section'>
+      {contacts && (
+        <ContactsBlock dividerTop displayEmail contacts={contacts} />
+      )}
+    </div>
+  );
 
   return (
     <Layout className='article-template' location={location}>
@@ -63,7 +75,7 @@ const ArticleTemplate = ({ location, data }) => {
         <div className='main'>
           <div className='main-article'>
             <StandardImage story={page} />
-            <StandardContent story={page} />
+            <StandardContent story={page} contactSection={contactSection} />
           </div>
 
           <div className='main-links'>
@@ -76,7 +88,7 @@ const ArticleTemplate = ({ location, data }) => {
                 collapse={true}
               />
             </div>
-            <StandardContactBlock dividerTop contacts={contacts} />
+            {contactSection}
           </div>
         </div>
       </div>

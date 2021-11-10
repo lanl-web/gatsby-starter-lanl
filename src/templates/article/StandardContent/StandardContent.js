@@ -6,7 +6,7 @@ import { replaceElements } from '../../../utils';
 
 import './StandardContent.scss';
 
-export const StandardContent = ({ story }) => {
+export const StandardContent = ({ contactSection, story }) => {
   const body = story?.body ?? '';
   return (
     <div className='standard-template-content'>
@@ -14,6 +14,7 @@ export const StandardContent = ({ story }) => {
         <div className='body-copy'>
           <ContentBody body={replaceElements(body)} />
         </div>
+        {contactSection}
       </div>
     </div>
   );
@@ -23,6 +24,7 @@ StandardContent.defaultProps = {};
 
 StandardContent.propTypes = {
   story: PropTypes.object.isRequired,
+  contactSection: PropTypes.node,
 };
 
 export default StandardContent;

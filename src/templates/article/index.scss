@@ -69,6 +69,27 @@
     margin-bottom: 20px;
   }
 
+  .main-links {
+    .contacts-section {
+      display: none;
+    }
+  }
+
+  .contacts-section {
+    .contact-block {
+      border-top: thin solid $color-line;
+
+      &:nth-child(2) {
+        border-top: none;
+        margin-top: 22px;
+
+        h3 {
+          display: none;
+        }
+      }
+    }
+  }
+
   @include tablet {
     .social-section {
       margin-bottom: 0;
@@ -82,12 +103,20 @@
       &-article {
         order: 1;
         min-width: 664px;
+
+        .contacts-section {
+          display: none;
+        }
       }
 
       &-links {
         order: 2;
         padding: 0 20px;
         margin-left: 20px;
+
+        .contacts-section {
+          display: block;
+        }
       }
     }
 
@@ -97,12 +126,8 @@
     }
 
     .social-section {
-      padding-bottom: 61px;
+      padding-bottom: 20px;
       border-top: thin solid $color-line;
-
-      .social-block {
-        margin-bottom: 0;
-      }
     }
   }
 

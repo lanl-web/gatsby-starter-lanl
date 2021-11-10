@@ -77,32 +77,6 @@ const HomeTemplate = ({ location, data }) => {
     email: 'lorem@lanl.gov',
   };
 
-  const renderBlockB = () => {
-    return (
-      splitBannerThree.heading && (
-        <div className='block-b'>
-          <SplitBanner>
-            <SplitBannerImage imgUrl={splitBannerThree.image} />
-            <SplitBannerContent
-              title={splitBannerThree.heading}
-              description={splitBannerThree.subheading}
-              buttonLink={splitBannerThree.link}
-              buttonText='Read More'
-            />
-          </SplitBanner>
-
-          <Banner
-            className='link-banner'
-            featuredImage={bannerFour.image}
-            title={bannerFour.heading}
-            subtitle={bannerFour.subheading}
-            btnLink={bannerFour.link}
-          />
-        </div>
-      )
-    );
-  };
-
   const renderContactBlock = ({ email, name }) => {
     return (
       email && (
@@ -122,75 +96,89 @@ const HomeTemplate = ({ location, data }) => {
     <Layout className='home-template' location={location}>
       <SEO title='Home Template' />
 
-      <div className='hero-block'>
-        <Banner
-          className='home-banner'
-          contentSide='center'
-          featuredImage={featuredImage}
-          title={name}
-          contentMaxWidth={false}
-          btnText=''
-          btnLink=''
-        />
+      <Banner
+        className='home-banner'
+        contentSide='center'
+        featuredImage={featuredImage}
+        title={name}
+        contentMaxWidth={false}
+        btnText=''
+        btnLink=''
+      />
 
-        <Section className='intro-section' backgroundColor='white'>
-          <h1 className='page-title'>{title}</h1>
-          <ContentBody body={body} className='page-intro' isHTML />
-        </Section>
-      </div>
+      <Section className='intro-section' backgroundColor='white'>
+        <h1 className='page-title'>{title}</h1>
+        <ContentBody body={body} className='page-intro' isHTML />
+      </Section>
 
-      <div className='block-a'>
-        <Banner
-          className='link-banner'
-          contentSide='right'
-          featuredImage={bannerOne.image}
-          title={bannerOne.heading}
-          subtitle={bannerOne.subheading}
-          btnLink={bannerOne.link}
-        />
+      <Banner
+        className='link-banner'
+        contentSide='right'
+        featuredImage={bannerOne.image}
+        title={bannerOne.heading}
+        subtitle={bannerOne.subheading}
+        btnLink={bannerOne.link}
+      />
 
-        <Section backgroundColor='white'>
-          <SectionHeader title={iconLinkTwo.title} />
-          <PanelGroup divider>
-            {iconLinkTwo.data.map(({ name, icon, url }) => (
-              <Panel
-                key={`icon-links-two-${name}`}
-                link={url}
-                icon={icon}
-                title={name}
-              />
-            ))}
-          </PanelGroup>
-        </Section>
-      </div>
+      <Section backgroundColor='white'>
+        <SectionHeader title={iconLinkTwo.title} />
+        <PanelGroup divider>
+          {iconLinkTwo.data.map(({ name, icon, url }) => (
+            <Panel
+              key={`icon-links-two-${name}`}
+              link={url}
+              icon={icon}
+              title={name}
+            />
+          ))}
+        </PanelGroup>
+      </Section>
 
-      {renderBlockB()}
-
-      <div className='block-c'>
+      {splitBannerThree.heading && (
         <SplitBanner>
-          <SplitBannerImage imgUrl={splitBannerFive.image} />
+          <SplitBannerImage imgUrl={splitBannerThree.image} />
           <SplitBannerContent
-            title={splitBannerFive.heading}
-            description={splitBannerFive.subheading}
-            buttonLink={splitBannerFive.link}
+            title={splitBannerThree.heading}
+            description={splitBannerThree.subheading}
+            buttonLink={splitBannerThree.link}
             buttonText='Read More'
           />
         </SplitBanner>
+      )}
 
-        <Section backgroundColor='white'>
-          <SectionHeader title={iconLinkSix.title} />
-          <PanelGroup className='quick-links'>
-            {iconLinkSix.data.map(({ name, icon, url }) => (
-              <Panel
-                key={`icon-links-six-${name}`}
-                link={url}
-                icon={icon}
-                title={name}
-              />
-            ))}
-          </PanelGroup>
-        </Section>
-      </div>
+      {bannerFour.heading && (
+        <Banner
+          className='link-banner'
+          featuredImage={bannerFour.image}
+          title={bannerFour.heading}
+          subtitle={bannerFour.subheading}
+          btnLink={bannerFour.link}
+        />
+      )}
+
+      <SplitBanner>
+        <SplitBannerImage imgUrl={splitBannerFive.image} />
+        <SplitBannerContent
+          title={splitBannerFive.heading}
+          description={splitBannerFive.subheading}
+          buttonLink={splitBannerFive.link}
+          buttonText='Read More'
+        />
+      </SplitBanner>
+
+      <Section backgroundColor='white'>
+        <SectionHeader title={iconLinkSix.title} />
+        <PanelGroup className='quick-links'>
+          {iconLinkSix.data.map(({ name, icon, url }) => (
+            <Panel
+              key={`icon-links-six-${name}`}
+              link={url}
+              icon={icon}
+              title={name}
+            />
+          ))}
+        </PanelGroup>
+      </Section>
 
       {renderContactBlock(contact)}
     </Layout>

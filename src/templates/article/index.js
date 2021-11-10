@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import {
   Banner,
   BreadCrumbs,
+  ContactsBlock,
   ContentBody,
   ContentIntroduction,
   ContentTitle,
@@ -18,6 +19,7 @@ import SEO from '../../components/seo';
 
 import './index.scss';
 import { replaceElements } from '../../utils';
+import classNames from 'classnames';
 
 const ArticleTemplate = ({ location, data }) => {
   const name = 'name';
@@ -33,6 +35,21 @@ const ArticleTemplate = ({ location, data }) => {
       description: 'This is a test caption',
     },
   };
+
+  const contacts = [
+    {
+      name: 'Lorem Ipsum',
+      mail_stop: 'Mail Stop 1',
+      email: 'lorem@lanl.gov',
+    },
+    {
+      name: 'Lorem Ipsum',
+      mail_stop: 'Mail Stop 2',
+      email: 'lorem@lanl.gov',
+    },
+  ];
+
+  const hideContacts = contacts.length === 0 ? 'hide-contacts-block' : '';
 
   return (
     <Layout className='article-template' location={location}>
@@ -58,9 +75,11 @@ const ArticleTemplate = ({ location, data }) => {
           <div className='main-article'>
             <ArticleImage story={page} />
             <div className='body'>
-              <ContentBody
-                body={replaceElements(page?.body)}
-                className='body-copy'
+              <ContentBody body={replaceElements(page?.body)} />
+              <ContactsBlock
+                dividerTop
+                contacts={contacts}
+                className={`contacts-body ${hideContacts}`}
               />
             </div>
           </div>
@@ -72,6 +91,11 @@ const ArticleTemplate = ({ location, data }) => {
                 emailSubject={title}
                 shareLink={shareLink}
                 collapse={true}
+              />
+              <ContactsBlock
+                dividerTop
+                contacts={contacts}
+                className={`contacts-sidebar ${hideContacts}`}
               />
             </div>
           </div>

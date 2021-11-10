@@ -10,12 +10,12 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import './layout.scss';
-import { Footer, NavHeader } from '@lanl-web/lanl-components';
+import { Footer, Header } from '@lanl-web/lanl-components';
 
 const Layout = ({ children, className }) => {
   return (
     <>
-      <NavHeader />
+      <Header />
       <Helmet>
         <script
           type='text/javascript'

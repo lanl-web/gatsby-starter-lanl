@@ -2,16 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import { Banner, BreadCrumbs, SocialBlock } from '@lanl-web/lanl-components';
+import {
+  Banner,
+  BreadCrumbs,
+  ContactsBlock,
+  ContentBody,
+  ContentIntroduction,
+  ContentTitle,
+  SocialBlock,
+} from '@lanl-web/lanl-components';
 
-import { StandardContent } from './StandardContent';
-import { StandardHeading } from './StandardHeading';
-import { StandardImage } from './StandardImage';
+import { ArticleImage } from './ArticleImage';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 
 import './index.scss';
+import { replaceElements } from '../../utils';
+import classNames from 'classnames';
 
 const ArticleTemplate = ({ location, data }) => {
   const name = 'name';
@@ -27,6 +35,21 @@ const ArticleTemplate = ({ location, data }) => {
       description: 'This is a test caption',
     },
   };
+
+  const contacts = [
+    {
+      name: 'Lorem Ipsum',
+      mail_stop: 'Mail Stop 1',
+      email: 'lorem@lanl.gov',
+    },
+    {
+      name: 'Lorem Ipsum',
+      mail_stop: 'Mail Stop 2',
+      email: 'lorem@lanl.gov',
+    },
+  ];
+
+  const hideContacts = contacts.length === 0 ? 'hide-contacts-block' : '';
 
   return (
     <Layout className='article-template' location={location}>
@@ -44,13 +67,21 @@ const ArticleTemplate = ({ location, data }) => {
             location={location}
             homeName='Sustainability'
           />
-          <StandardHeading introduction={introduction} title={title} />
+          <ContentTitle>{title}</ContentTitle>
+          <ContentIntroduction>{introduction}</ContentIntroduction>
         </div>
 
         <div className='main'>
           <div className='main-article'>
-            <StandardImage story={page} />
-            <StandardContent story={page} />
+            <ArticleImage story={page} />
+            <div className='body'>
+              <ContentBody body={replaceElements(page?.body)} />
+              <ContactsBlock
+                dividerTop
+                contacts={contacts}
+                className={`contacts-body ${hideContacts}`}
+              />
+            </div>
           </div>
 
           <div className='main-links'>
@@ -60,6 +91,11 @@ const ArticleTemplate = ({ location, data }) => {
                 emailSubject={title}
                 shareLink={shareLink}
                 collapse={true}
+              />
+              <ContactsBlock
+                dividerTop
+                contacts={contacts}
+                className={`contacts-sidebar ${hideContacts}`}
               />
             </div>
           </div>

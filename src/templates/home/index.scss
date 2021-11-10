@@ -1,3 +1,46 @@
 .home-template {
+  .home-banner {
+    width: 100%;
+  }
 
+  .link-banner {
+    .lanl-banner-title {
+      font-size: 48px;
+      line-height: 64px;
+    }
+  }
+
+  .intro-section {
+    .lanl-section-container {
+      max-width: 1400px;
+    }
+  }
+
+  .page-title {
+    margin-bottom: 30px;
+  }
+
+  .page-intro {
+
+    p {
+      font-weight: 600;
+    }
+  }
+
+  .lanl-banner-content {
+    &-right,&-left {
+      max-width: 705px
+    }
+  }
+
+  .quick-links {
+    .lanl-panel {
+
+      @include desktop {
+        align-self: stretch;
+        flex: 0 1 200px;
+      }
+    }
+  }
 }
+

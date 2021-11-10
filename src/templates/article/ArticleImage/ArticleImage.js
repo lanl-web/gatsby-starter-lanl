@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getImageUrl } from '../../../utils';
 
-import './StandardImage.scss';
+import './ArticleImage.scss';
 
-export const StandardImage = ({ story }) => {
+export const ArticleImage = ({ story }) => {
   const caption = story?.feature_image?.description ?? '';
   const image = getImageUrl(story?.feature_image?.filename_disk ?? '');
   const alt = story?.feature_image?.title ?? '';
@@ -12,7 +12,7 @@ export const StandardImage = ({ story }) => {
   const width = story?.feature_image?.width ?? '';
 
   return (
-    <div className='standard-template-image'>
+    <div className='article-template-image'>
       <img
         alt={alt}
         src={image}
@@ -25,8 +25,8 @@ export const StandardImage = ({ story }) => {
   );
 };
 
-StandardImage.propTypes = {
+ArticleImage.propTypes = {
   story: PropTypes.object.isRequired,
 };
 
-export default StandardImage;
+export default ArticleImage;

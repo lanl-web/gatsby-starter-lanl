@@ -72,26 +72,6 @@ const HomeTemplate = ({ location, data }) => {
     ],
   };
 
-  const contact = {
-    name: 'Lorem Ipsum',
-    email: 'lorem@lanl.gov',
-  };
-
-  const renderContactBlock = ({ email, name }) => {
-    return (
-      email && (
-        <Section backgroundColor='white'>
-          <div className='contact-block'>
-            <h3 className='title'>Contact</h3>
-            <p className='info'>
-              {name} | <a href={`mailto:${email}`}>{email}</a>
-            </p>
-          </div>
-        </Section>
-      )
-    );
-  };
-
   return (
     <Layout className='home-template' location={location}>
       <SEO title='Home Template' />
@@ -179,8 +159,6 @@ const HomeTemplate = ({ location, data }) => {
           ))}
         </PanelGroup>
       </Section>
-
-      {renderContactBlock(contact)}
     </Layout>
   );
 };
